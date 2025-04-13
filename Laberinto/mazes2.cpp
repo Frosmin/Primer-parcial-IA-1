@@ -143,7 +143,11 @@ void bfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
         imprimir_estado("BFS", actual, frontera, queso_x, queso_y, board);
 
         if (actual.x == queso_x && actual.y == queso_y) {
-            cout << "[BFS] ¡Camino encontrado!\n";
+            cout << "\n*********************************************\n";
+            cout << "*                                           *\n";
+            cout << "*       [BFS] ¡CAMINO ENCONTRADO! 🎉        *\n";
+            cout << "*                                           *\n";
+            cout << "*********************************************\n";
             return;
         }
 
@@ -159,7 +163,11 @@ void bfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
         }
     }
 
-    cout << "[BFS] No se encontró camino.\n";
+    cout << "\n*********************************************\n";
+    cout << "*                                           *\n";
+    cout << "*       [BFS] No se encontró camino.        *\n";
+    cout << "*                                           *\n";
+    cout << "*********************************************\n";
 }
 
 void dfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int>> &board) {
@@ -187,6 +195,11 @@ void dfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
 
         if (actual.x == queso_x && actual.y == queso_y) {
             cout << "[DFS] ¡Camino encontrado!\n";
+            cout << "\n*********************************************\n";
+            cout << "*                                           *\n";
+            cout << "*       [DFS] ¡Camino encontrado! 🎉        *\n";
+            cout << "*                                           *\n";
+            cout << "*********************************************\n";
             return;
         }
 
@@ -203,6 +216,11 @@ void dfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
     }
 
     cout << "[DFS] No se encontró camino.\n";
+    cout << "\n*********************************************\n";
+    cout << "*                                           *\n";
+    cout << "*       [DFS] ¡Camino encontrado! 🎉        *\n";
+    cout << "*                                           *\n";
+    cout << "*********************************************\n";
 }
 
 vector<vector<int>> getMaze(int i){
