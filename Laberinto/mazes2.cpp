@@ -268,8 +268,22 @@ int main() {
         int inicio_x = allLab[opcion - 1].S.F.F, inicio_y = allLab[opcion - 1].S.F.S;
         int queso_x = allLab[opcion - 1].S.S.F, queso_y = allLab[opcion - 1].S.S.S;
 
-        bfs(inicio_x, inicio_y, queso_x, queso_y, lab);
-        dfs(inicio_x, inicio_y, queso_x, queso_y, lab);
+        cout << "Seleccione el algoritmo que desea usar:\n";
+        cout << "1. BFS (Breadth-First Search)\n";
+        cout << "2. DFS (Depth-First Search)\n";
+        cout << "Ingrese su opcion: ";
+
+        int algoritmo;
+        cin >> algoritmo;
+
+        if (algoritmo == 1) {
+            bfs(inicio_x, inicio_y, queso_x, queso_y, lab);
+        } else if (algoritmo == 2) {
+            dfs(inicio_x, inicio_y, queso_x, queso_y, lab);
+        } else {
+            cout << "Opcion invalida. Regresando al menu principal.\n";
+            continue;
+        }
 
         cout << "----------------------------------------------\n";
     }
