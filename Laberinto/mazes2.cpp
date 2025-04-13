@@ -213,21 +213,50 @@ vector<vector<int>> getMaze(int i){
 }
 
 int main() {
+    vector<pair<int, pair<pii, pii>>> allLab = {
+        {1, {{9, 3}, {9, 8}}},
+        {2, {{0, 1}, {9, 8}}},
+        {3, {{5, 0}, {9, 8}}},
+        {4, {{0, 1}, {2, 9}}}
+    };
 
-    vector<pair<int,pair<pii,pii>>> allLab={{1,{{9,3},{9,8}}},{2,{{0,1},{9,8}}},{3,{{5,0},{9,8}}},{4,{{0,1},{2,9}}}};
-    for(int i=0;i<allLab.size();i++){
-        cout<<"#############################################"<<i+1<<endl;
-        cout<<"Este es el laberinto numero: "<<i+1<<endl;
-        cout<<"#############################################"<<i+1<<endl;
-        vector<vector<int>> lab=getMaze(i);
-        int inicio_x = allLab[i].S.F.F, inicio_y = allLab[i].S.F.S;
-        int queso_x = allLab[i].S.S.F, queso_y = allLab[i].S.S.S;
+    while (true) {
+        cout << "#############################################\n";
+        cout << "Seleccione el laberinto que desea resolver:\n";
+        cout << "1. Laberinto 1\n";
+        cout << "2. Laberinto 2\n";
+        cout << "3. Laberinto 3\n";
+        cout << "4. Laberinto 4\n";
+        cout << "5. Salir\n";
+        cout << "#############################################\n";
+        cout << "Ingrese su opción: ";
+
+        int opcion;
+        cin >> opcion;
+
+        if (opcion == 5) {
+            cout << "Saliendo del programa...\n";
+            break;
+        }
+
+        if (opcion < 1 || opcion > 4) {
+            cout << "Opción inválida. Intente de nuevo.\n";
+            continue;
+        }
+
+        cout << "#############################################\n";
+        cout << "Este es el laberinto número: " << opcion << endl;
+        cout << "#############################################\n";
+
+        vector<vector<int>> lab = getMaze(opcion - 1);
+        int inicio_x = allLab[opcion - 1].S.F.F, inicio_y = allLab[opcion - 1].S.F.S;
+        int queso_x = allLab[opcion - 1].S.S.F, queso_y = allLab[opcion - 1].S.S.S;
+
         bfs(inicio_x, inicio_y, queso_x, queso_y, lab);
         dfs(inicio_x, inicio_y, queso_x, queso_y, lab);
-        cout<<"----------------------------------------------"<<endl;
+
+        cout << "----------------------------------------------\n";
     }
-
-
 
     return 0;
 }
