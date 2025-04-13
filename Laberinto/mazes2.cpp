@@ -145,7 +145,7 @@ void bfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
         if (actual.x == queso_x && actual.y == queso_y) {
             cout << "\n*********************************************\n";
             cout << "*                                           *\n";
-            cout << "*       [BFS] ¡CAMINO ENCONTRADO! 🎉        *\n";
+            cout << "*       [BFS]  CAMINO ENCONTRADO!           *\n";
             cout << "*                                           *\n";
             cout << "*********************************************\n";
             return;
@@ -165,7 +165,7 @@ void bfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
 
     cout << "\n*********************************************\n";
     cout << "*                                           *\n";
-    cout << "*       [BFS] No se encontró camino.        *\n";
+    cout << "*       [BFS] No se encontro camino.        *\n";
     cout << "*                                           *\n";
     cout << "*********************************************\n";
 }
@@ -194,10 +194,9 @@ void dfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
         imprimir_estado("DFS", actual, frontera, queso_x, queso_y, board);
 
         if (actual.x == queso_x && actual.y == queso_y) {
-            cout << "[DFS] ¡Camino encontrado!\n";
             cout << "\n*********************************************\n";
             cout << "*                                           *\n";
-            cout << "*       [DFS] ¡Camino encontrado! 🎉        *\n";
+            cout << "*       [DFS]  Camino encontrado!           *\n";
             cout << "*                                           *\n";
             cout << "*********************************************\n";
             return;
@@ -215,10 +214,9 @@ void dfs(int inicio_x, int inicio_y, int queso_x, int queso_y, vector<vector<int
         }
     }
 
-    cout << "[DFS] No se encontró camino.\n";
     cout << "\n*********************************************\n";
     cout << "*                                           *\n";
-    cout << "*       [DFS] ¡Camino encontrado! 🎉        *\n";
+    cout << "*       [DFS]  No se encontro camino.       *\n";
     cout << "*                                           *\n";
     cout << "*********************************************\n";
 }
@@ -247,7 +245,7 @@ int main() {
         cout << "4. Laberinto 4\n";
         cout << "5. Salir\n";
         cout << "#############################################\n";
-        cout << "Ingrese su opción: ";
+        cout << "Ingrese su opcion: ";
 
         int opcion;
         cin >> opcion;
@@ -258,12 +256,12 @@ int main() {
         }
 
         if (opcion < 1 || opcion > 4) {
-            cout << "Opción inválida. Intente de nuevo.\n";
+            cout << "Opcion invalida. Intente de nuevo.\n";
             continue;
         }
 
         cout << "#############################################\n";
-        cout << "Este es el laberinto número: " << opcion << endl;
+        cout << "Este es el laberinto numero: " << opcion << endl;
         cout << "#############################################\n";
 
         vector<vector<int>> lab = getMaze(opcion - 1);
