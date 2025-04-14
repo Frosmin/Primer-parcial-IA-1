@@ -133,11 +133,11 @@ int evaluarMovimiento(Tablero& tablero, int fila, int columna) {
     int puntaje = 0;
     
     
-    if (fila == 1 && columna == 1) puntaje += 5; // Centro
+    if (fila == 1 && columna == 1) puntaje += 5; 
     if ((fila == 0 && columna == 0) || 
         (fila == 0 && columna == 2) || 
         (fila == 2 && columna == 0) || 
-        (fila == 2 && columna == 2)) puntaje += 3; // Esquinas
+        (fila == 2 && columna == 2)) puntaje += 3; 
     
     
     int fichasPropias = 0;
